@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 魅力講師訓 | 讓您的專業，在舞台上綻放無限影響力</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif; 
+            background: #f8f9fa;
+            color: #1a1a2e;
+            line-height: 1.8;
+        }
+        
+        /* 導航欄 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 46, 0.98);
+            padding: 15px 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: white;
+            font-weight: 900;
+            font-size: 20px;
+        }
+        .nav-cta {
+            background: #e94560;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            color: #feca57;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+        .btn-primary {
+            background: #e94560;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 18px;
+            display: inline-block;
+            margin: 10px;
+        }
+        .btn-secondary {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+        
+        /* 通用區塊 */
+        .section { padding: 80px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-tag {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .section-title {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 900;
+        }
+        
+        /* 故事區 */
+        .story-section { background: white; }
+        .story-box {
+            background: #fff5f5;
+            border-left: 5px solid #e94560;
+            padding: 30px;
+            border-radius: 0 15px 15px 0;
+            margin-bottom: 30px;
+            line-height: 2;
+        }
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #e94560;
+            text-align: center;
+        }
+        .problem-icon { font-size: 40px; margin-bottom: 15px; }
+        .problem-text { font-weight: 700; font-size: 16px; }
+        
+        /* 介紹區 */
+        .intro-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+        }
+        .intro-title {
+            color: #feca57;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        .intro-text {
+            font-size: 17px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+        .highlight-box {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            color: #00d9ff;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        /* 效益區 */
+        .benefits-section { background: #f8f9fa; }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .benefit-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #00d9ff, #9b59b6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+        .benefit-card h3 {
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        .benefit-card p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        /* 特色區 */
+        .feature-section { background: white; }
+        .feature-box {
+            background: #f0f9ff;
+            border: 2px solid #00d9ff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+        .feature-title {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .feature-highlight {
+            background: white;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            color: #00d9ff;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* 大綱區 */
+        .syllabus-section { background: #f8f9fa; }
+        .syllabus-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+        .syllabus-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        .syllabus-card:nth-child(1) .syllabus-icon { background: #fef3c7; }
+        .syllabus-card:nth-child(2) .syllabus-icon { background: #dbeafe; }
+        .syllabus-card:nth-child(3) .syllabus-icon { background: #fce7f3; }
+        .syllabus-card:nth-child(4) .syllabus-icon { background: #d1fae5; }
+        .syllabus-content h3 {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+        .syllabus-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .syllabus-list li {
+            background: #f3f4f6;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        /* 適合對象 */
+        .target-section { background: white; }
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .target-card {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .target-icon { font-size: 45px; margin-bottom: 15px; }
+        .target-text { font-weight: 700; font-size: 16px; }
+        
+        /* FAQ */
+        .faq-section { background: #f8f9fa; }
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 17px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: #e94560;
+        }
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 30px 25px;
+        }
+        .faq-answer p {
+            color: #666;
+            line-height: 1.8;
+        }
+        .faq-highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fef3c7 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 88%;
+            font-weight: 700;
+        }
+        
+        /* 資訊區 */
+        .info-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+            .syllabus-card { grid-template-columns: 1fr; text-align: center; }
+        }
+        .info-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .info-label {
+            color: #feca57;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .info-value {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .price-section {
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .price-value {
+            font-size: 48px;
+            font-weight: 900;
+            margin: 15px 0;
+        }
+        .bank-info {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .reminder-box {
+            background: #feca57;
+            color: #1a1a2e;
+            padding: 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        .btn-line {
+            background: #00c300;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        
+        /* 倒數區 */
+        .countdown-section {
+            background: linear-gradient(135deg, #e94560, #ff6b6b);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .countdown-title {
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .deadline-highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 8px;
+        }
+        .btn-register {
+            background: white;
+            color: #e94560;
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 20px;
+            display: inline-block;
+            margin-top: 30px;
+        }
+        
+        /* 頁尾 */
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .footer h3 {
+            color: #feca57;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <!-- 導航 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎤 2026 魅力講師訓</div>
+            <a href="#register" class="nav-cta">立即報名</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div>
+            <div style="display: inline-block; background: rgba(233,69,96,0.2); border: 2px solid #e94560; color: #e94560; padding: 10px 25px; border-radius: 30px; font-weight: 700; margin-bottom: 30px;">✨ 2026 年度精選課程</div>
+            <h1>讓您的專業，在舞台<br>綻放無限影響力！</h1>
+            <p class="hero-subtitle">專為專業人士與創業者打造的舞台影響力實戰訓練</p>
+            <a href="#register" class="btn-primary">👉 立即報名參加</a>
+            <a href="#story" class="btn-secondary">了解更多 ↓</a>
+        </div>
+    </section>
+
+    <!-- 痛點故事 -->
+    <section id="story" class="section story-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">痛點</span>
+                <h2 class="section-title">您是否曾有這樣的困擾？</h2>
+            </div>
+            <div class="story-box">
+                明明<strong style="color: #e94560;">專業知識紮實</strong>，卻常因緊張而表達打折？上台時思緒萬千，卻難以清晰傳達，總覺得「好像沒被真正聽懂」？害怕被質疑、被比較，導致在舞台上用力過度或過於保守？甚至，個人形象不夠一致，讓您的專業與魅力無法被清楚記住？
+            </div>
+            <p style="text-align: center; font-size: 17px; color: #666; margin-bottom: 30px;">
+                在現今時代，真正拉開差距的，是當您站上舞台時，是否能讓人願意<strong style="color: #e94560;">相信您、跟隨您、選擇您</strong>。
+            </p>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">😰</div>
+                    <p class="problem-text">被緊張、害怕失誤、擔心不被認可所牽制</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📉</div>
+                    <p class="problem-text">表達不穩、魅力不足，專業價值無法完整傳遞</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🎭</div>
+                    <p class="problem-text">台上硬撐或假裝不怕，無法自在展現實力</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 課程介紹 -->
+    <section class="section intro-section">
+        <div class="container">
+            <h2 class="intro-title">《2026 魅力講師訓》為您解決關鍵痛點！</h2>
+            <p class="intro-text">本課程從「克服舞台恐懼」與「重建自我認知」出發，協助學員看懂緊張背後的心理機制，將壓力轉化為穩定而可控的舞台力量。</p>
+            <p class="intro-text">透過肢體語言、舞台動線與表達結構訓練，讓專業被聽懂、理念被認同，逐步形塑清晰而具影響力的個人品牌。</p>
+            <div class="highlight-box">
+                這不只是一門教您如何說話的課程，更是為專業人士與創業者打造的舞台影響力與個人品牌升級訓練！
+            </div>
+        </div>
+    </section>
+
+    <!-- 訓練效益 -->
+    <section class="section benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">效益</span>
+                <h2 class="section-title">訓練效益，讓您脫胎換骨</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">1</div>
+                    <h3>建立使命感與專業自覺</h3>
+                    <p>強化教學動機與熱情，提升持續授課的內在驅動力</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">2</div>
+                    <h3>有效破除舞台恐懼</h3>
+                    <p>展現自信且具說服力的專業魅力</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">3</div>
+                    <h3>洞察個人舞台優勢</h3>
+                    <p>形塑專屬且具辨識度的講師風格</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">4</div>
+                    <h3>提升教學應變能力</h3>
+                    <p>面對實際情境問題，能即時應對並提升成效</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">5</div>
+                    <h3>改善表達模式</h3>
+                    <p>覺察並改善不利於公眾表達的習慣</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">6</div>
+                    <h3>熟練肢體語言</h3>
+                    <p>運用眼神、表情與肢體，使表達更具感染力</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 課程特色 -->
+    <section class="section feature-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="background: #00d9ff;">特色</span>
+                <h2 class="section-title">課程特色與教學手法</h2>
+            </div>
+            <div class="feature-box">
+                <div class="feature-title">🎯 高度互動的教學設計</div>
+                <p style="color: #666; font-size: 17px; line-height: 1.9;">
+                    結合理論與親身體驗，透過<strong>講師講解、示範、個人練習、小組演練與上台實戰演練</strong>的五階段循序進行，營造安全且投入的學習氛圍。
+                </p>
+                <div class="feature-highlight">學得到 · 做得到 · 用得出來</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 課程大綱 -->
+    <section class="section syllabus-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="background: #9b59b6;">大綱</span>
+                <h2 class="section-title">課程大綱精華</h2>
+            </div>
+            <div class="syllabus-card">
+                <div class="syllabus-icon">💡</div>
+                <div class="syllabus-content">
+                    <h3>【觀念篇】</h3>
+                    <ul class="syllabus-list">
+                        <li>講師應具備的關鍵條件</li>
+                        <li>成人學習特性與教學應用</li>
+                        <li>成功講師的核心態度</li>
+                        <li>建立信心與心理韌性</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus-card">
+                <div class="syllabus-icon">🚀</div>
+                <div class="syllabus-content">
+                    <h3>【前置篇】</h3>
+                    <ul class="syllabus-list">
+                        <li>克服上台緊張的實用技巧</li>
+                        <li>課程開始前的關鍵準備</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus-card">
+                <div class="syllabus-icon">🎭</div>
+                <div class="syllabus-content">
+                    <h3>【台上篇】</h3>
+                    <ul class="syllabus-list">
+                        <li>講師魅力與舞台掌控</li>
+                        <li>專業形象與儀態建立</li>
+                        <li>常見教學狀況應對</li>
+                        <li>帶動學習氣氛的方法</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="syllabus-card">
+                <div class="syllabus-icon">🗣️</div>
+                <div class="syllabus-content">
+                    <h3>【口才篇】</h3>
+                    <ul class="syllabus-list">
+                        <li>聲音的影響力與運用</li>
+                        <li>塑造權威感與信任感</li>
+                        <li>打造引人入勝的開場白</li>
+                        <li>回應學員問題的實用步驟</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 適合對象 -->
+    <section class="section target-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="background: #1a1a2e;">對象</span>
+                <h2 class="section-title">誰適合參加？</h2>
+            </div>
+            <div class="target-grid">
+                <div class="target-card">
+                    <div class="target-icon">💼</div>
+                    <p class="target-text">想提升說服力的創業者</p>
+                </div>
+                <div class="target-card">
+                    <div class="target-icon">📊</div>
+                    <p class="target-text">常要簡報、授課的專業人士</p>
+                </div>
+                <div class="target-card">
+                    <div class="target-icon">⭐</div>
+                    <p class="target-text">想把專業變成影響力的有志之士</p>
+                </div>
+                <div class="target-card">
+                    <div class="target-icon">💪</div>
+                    <p class="target-text">不想被恐懼限制的勇敢挑戰者</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="background: #666;">問答</span>
+                <h2 class="section-title">常見疑慮，我們為您解答</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Q1：我不是職業講師，也適合上這門課嗎？</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><span class="faq-highlight">適合！</span>這門課不是培養「表演型講師」，而是為需要上台說明、簡報、教學、分享理念的專業人士與創業者而設。只要您需要被聽懂、被信任、被選擇，這門課就與您有關。</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Q2：我其實很容易緊張，真的能改善嗎？</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><span class="faq-highlight">可以！</span>課程不要求您「不緊張」，而是教您看懂緊張、駕馭緊張，讓它不再拖累您的表現。多數學員真正的改變，是從「能穩住自己」開始，而不是硬撐或假裝不怕。</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="this.classList.toggle('active')">
+                    <div class="faq-question">
+                        <span>Q3：如果我已經有上台經驗，還需要再上嗎？</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><span class="faq-highlight">越有經驗，收穫通常越深。</span>這門課能幫您檢視既有表達模式，強化優勢、修正盲點，讓您不只是「會講」，而是「講得讓人記住」。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 課程資訊 -->
+    <section class="section info-section">
+        <div class="container">
+            <div class="section-header" style="color: white;">
+                <span class="section-tag" style="background: #feca57; color: #1a1a2e;">資訊</span>
+                <h2 class="section-title" style="color: white;">課程資訊</h2>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-label">📅 時間</div>
+                    <div class="info-value">2026/4/19 (日)<br>9:00 - 18:00</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">📍 地點</div>
+                    <div class="info-value">
+                        新竹縣竹北市<br>莊敬六街 83 號 2 樓<br>
+                        <a href="https://maps.app.goo.gl/Wp5tKL5H6kE3RDj28" target="_blank" style="color: #00d9ff; font-size: 14px;">🗺️ 查看地圖</a>
+                    </div>
+                </div>
+            </div>
+            <div class="price-section">
+                <div style="font-size: 16px; opacity: 0.9;">課程費用</div>
+                <div class="price-value">$8,000 <span style="font-size: 20px;">/ 人</span></div>
+                <div class="bank-info">
+                    💳 822 (中國信託) | 266540056976
+                </div>
+                <div class="reminder-box">
+                    ⚠️ 匯款完成後，請加入 LINE 群組並提供匯款末五碼
+                </div>
+                <a href="https://line.me/ti/g/y8FUenhMbB" class="btn-line" target="_blank">💬 加入 LINE 群組</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 倒數報名 -->
+    <section id="register" class="countdown-section">
+        <div class="container">
+            <h2 class="countdown-title">⚡ 報名倒數中</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">
+                名額有限，請於 <span class="deadline-highlight">4/8 (三)</span> 前完成報名繳費<br>
+                鎖定您的舞台升級機會！
+            </p>
+            <a href="https://forms.gle/hdxNL9QN3vPUXtVM7" class="btn-register" target="_blank">👉 立即報名</a>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <h3>讓您的專業，在舞台上穩定輸出價值，<br>建立被信任的個人品牌！</h3>
+        <p>4/19 新竹見，一起成為更自信的魅力講師</p>
+        <p style="margin-top: 30px; opacity: 0.6; font-size: 14px;">
+            <a href="https://line.me/ti/g/y8FUenhMbB" target="_blank" style="color: #00d9ff;">LINE 群組</a> | 
+            <a href="https://maps.app.goo.gl/Wp5tKL5H6kE3RDj28" target="_blank" style="color: #00d9ff;">地圖</a> | 
+            <a href="https://forms.gle/hdxNL9QN3vPUXtVM7" target="_blank" style="color: #00d9ff;">報名表單</a>
+        </p>
+        <div style="margin-top: 30px; opacity: 0.5; font-size: 13px;">
+            © 2026 魅力講師訓 | 專業人士的舞台影響力實戰訓練
+        </div>
+    </footer>
+</body>
+</html>
